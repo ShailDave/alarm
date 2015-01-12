@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.shail.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.shail.com" xmlns:intf="http://ws.shail.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.shail.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="sayAbhi">
+    <complexType/>
+   </element>
+   <element name="sayAbhiResponse">
+    <complexType>
+     <sequence>
+      <element name="sayAbhiReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRingTone">
+    <complexType/>
+   </element>
+   <element name="getRingToneResponse">
+    <complexType>
+     <sequence>
+      <element name="getRingToneReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sayHelloWorld">
+    <complexType/>
+   </element>
+   <element name="sayHelloWorldResponse">
+    <complexType>
+     <sequence>
+      <element name="sayHelloWorldReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getRingToneRequest">
+
+      <wsdl:part element="impl:getRingTone" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sayHelloWorldRequest">
+
+      <wsdl:part element="impl:sayHelloWorld" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sayHelloWorldResponse">
+
+      <wsdl:part element="impl:sayHelloWorldResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRingToneResponse">
+
+      <wsdl:part element="impl:getRingToneResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sayAbhiRequest">
+
+      <wsdl:part element="impl:sayAbhi" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sayAbhiResponse">
+
+      <wsdl:part element="impl:sayAbhiResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="HelloWorld">
+
+      <wsdl:operation name="sayAbhi">
+
+         <wsdl:input message="impl:sayAbhiRequest" name="sayAbhiRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sayAbhiResponse" name="sayAbhiResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRingTone">
+
+         <wsdl:input message="impl:getRingToneRequest" name="getRingToneRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRingToneResponse" name="getRingToneResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sayHelloWorld">
+
+         <wsdl:input message="impl:sayHelloWorldRequest" name="sayHelloWorldRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sayHelloWorldResponse" name="sayHelloWorldResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="HelloWorldSoapBinding" type="impl:HelloWorld">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="sayAbhi">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sayAbhiRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sayAbhiResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRingTone">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRingToneRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRingToneResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sayHelloWorld">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sayHelloWorldRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sayHelloWorldResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="HelloWorldService">
+
+      <wsdl:port binding="impl:HelloWorldSoapBinding" name="HelloWorld">
+
+         <wsdlsoap:address location="http://localhost:8080/DynamicWebServ/services/HelloWorld"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
